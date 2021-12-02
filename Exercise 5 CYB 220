@@ -1,0 +1,205 @@
+Franklin George
+Instructor Grech CYB 220
+
+# 8-1
+
+# def display_message():
+#     """Print a string."""
+#     print("I'm learning about crazy functions in python.")
+
+# display_message()
+
+# 8-2
+
+# def favorite_book(title):
+#     print("One of my favorite books is " + title + '.')
+
+# favorite_book('Bgrech Bibliography')
+
+# 8-3
+
+
+# def make_shirt(size="Large", text="I love Python"):
+#     print('You ordered a shirt in ' +
+#           size +
+#           ' and with the text: ' +
+#           text)
+
+# make_shirt('Large', 'Franklin was here')
+# make_shirt()
+# make_shirt('Large')
+# make_shirt('Medium', 'Yolo')
+
+# 8-5
+
+
+# def describe_city(city, country='USA'):
+#     """Print city and country in string."""
+#     print(city.title() + ' is in ' + country.title())
+
+# describe_city('Anderson')
+# describe_city('Hartwell')
+# describe_city('Atlanta')
+# describe_city('Reynoldsville')
+
+# 8-6
+
+
+# def city_country(city, country):
+#     return city.title() + ', ' + country.title()
+
+# print(city_country('Anderson', 'united states'))
+# print(city_country('Sydney', 'Australia'))
+# print(city_country('Berlin', 'Germany'))
+
+# 8-7
+
+
+# def make_album(artist, album, tracks=1):
+
+#     album = {
+#         'name': artist,
+#         'title': album,
+#         'tracks_count': tracks,
+#     }
+
+#     return album
+
+# print(make_album('The 1975', 'ME'))
+# print(make_album('Van Halen', 'Panama'))
+# print(make_album('Khalid', 'Talk'))
+
+# print(make_album('Khalid', 'Talk', 3))
+
+# while True:
+#     print('Answer the questions to save info
+            # About your music collection.
+            # To quit, answer \'q\' at any time.')
+
+#     artist = input('What is the artist?\n')
+
+#     if artist == 'q':
+#         break
+
+#     album = input('What is the album title?\n')
+
+#     if album == 'q':
+#         break
+
+#     print('Added ' + artist.title() + '\'s' + album.title())
+
+# make_album(artist, album)
+
+# 8-9
+
+def show_messages(messages):
+    """Print all massages"""
+    for message in messages:
+        print(message)
+
+message = ['Team effort', 'Hwassup knapp', 'yooooo', 'brandon shoots 3's']
+show_messages(message)
+
+# 8-10
+
+def send_msg(not_sent, sent):
+    while not_sent:
+        current_sent = not_sent.pop()
+        print(f'Sending message: {current_sent}')
+        sent.append(current_sent)
+
+def show_msg(sent):
+    print('\nPrinted massage:')
+    for s in sent:
+        print(s)
+
+not_sent = ['Team effort', 'Hwassup knapp', 'yooooo', 'brandon shoots 3's']
+sent = []
+
+send_msg(not_sent, sent)
+show_msg(sent)
+
+# 8-11
+
+def send_msg(not_sent, sent):
+    while not_sent:
+        current_sent = not_sent.pop()
+        print(f'Sending message: {current_sent}')
+        sent.append(current_sent)
+
+def show_msg(sent):
+    print('\nPrinted massage:')
+    for s in sent:
+        print(s)
+
+not_sent = ['Team effort', 'Hwassup knapp', 'yooooo', 'brandon shoots 3's']
+sent = []
+
+send_msg(not_sent[:], sent)
+show_msg(sent)
+print(not_sent)
+print(sent)
+print(not_sent[:])
+
+# 8-12
+
+def make_snadwich(size, *toppings):
+    print(f'\nI am making a sandwich of the {size} with toppings: ')
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_snadwich('large', 'turkey')
+make_snadwich('small', 'tomato', 'cheese', 'lettuce', ham')
+
+# 8-13
+
+def build_profile(first, last, **user_info):
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return  user_info
+
+user_profile = build_profile('Franklin', 'PC', location='U.S', field='Cybersecurity')
+print(user_profile)
+
+# 8-14
+
+def make_car(brand, model, **car_info):
+    car_info['brand_car'] = brand
+    car_info['model_car'] = model
+    return  car_info
+car = make_car('Honda', 'Civic', color = 'blue', tow_package=false)
+print(car)
+
+def make_car(manufacturer, model, **options):
+    car_dict = {
+        'manufacturer': manufacturer.title(),
+        'model': model.title(),
+        }
+    for option, value in options.items():
+        car_dict[option] = value
+
+    return car_dict
+
+my_outback = make_car('ford', 'f-150', color='white', tow_package=True)
+print(my_outback)
+
+my_old_accord = make_car('honda', 'accord', year=2014, color='white',
+        headlights='popup')
+print(my_old_accord)
+
+# 8-15
+
+import printing_functions as pf
+
+unprinted_designs = ['fake potato', 'graphics card', 'knife', 'sunglasses']
+completed_models = []
+
+pf.print_models(unprinted_designs, completed_models)
+pf.show_completed_models(completed_models)
+
+# 8-16
+
+from making_sandwiches import make_sandwich as ms
+
+ms.make_snadwich('large', 'turkey')
+ms.make_snadwich('small', 'tomato', 'cheese', 'lettuce', 'Ham')
